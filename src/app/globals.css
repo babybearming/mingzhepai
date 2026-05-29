@@ -1,0 +1,130 @@
+﻿@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #1a1a2e;
+  --color-muted: #f5f5f7;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e7eb;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a2e;
+  --color-accent: #2d5a3d;
+  --color-accent-foreground: #ffffff;
+  --color-accent-light: #e8f5e9;
+  --font-sans: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  --color-background: #0f1117;
+  --color-foreground: #e4e4e7;
+  --color-muted: #1e1e2e;
+  --color-muted-foreground: #9ca3af;
+  --color-border: #2e2e3e;
+  --color-card: #181825;
+  --color-card-foreground: #e4e4e7;
+  --color-accent: #4ade80;
+  --color-accent-foreground: #0f1117;
+  --color-accent-light: #1a2e1a;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Prose customizations for Chinese text */
+.prose {
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-headings: var(--color-foreground);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-foreground);
+  --tw-prose-code: var(--color-accent);
+  max-width: 72ch;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  letter-spacing: 0.02em;
+}
+
+.prose p {
+  margin-bottom: 1.4em;
+}
+
+.prose blockquote {
+  border-left-color: var(--color-accent);
+  font-style: normal;
+  opacity: 0.9;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: var(--color-accent);
+}
+
+.prose code {
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+/* Page transition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
