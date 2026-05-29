@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^5.15.11",
     "@tailwindcss/typography": "^0.5.19",
     "gray-matter": "^4.0.3",
     "jose": "^6.2.3",
@@ -29,7 +28,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
-    "playwright": "^1.60.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
